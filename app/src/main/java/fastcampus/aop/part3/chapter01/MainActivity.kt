@@ -26,7 +26,12 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragmentContainer, PlayerFragment())
             .commit()
 
-        videoAdapter = VideoAdapter()
+        videoAdapter = VideoAdapter(callback = { url, title ->
+            supportFragmentManager.fragments.find { it is PlayerFragment }?.let {
+                (it as PlayerFragment).play(url, title)
+            }
+
+        })
 
         findViewById<RecyclerView>(R.id.mainRecyclerView).apply {
             adapter = videoAdapter
@@ -45,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         retrofit.create(VideoService::class.java).also {
 
             it.listVideos()
-                .enqueue(object: Callback<VideoDto> {
+                .enqueue(object : Callback<VideoDto> {
                     override fun onResponse(call: Call<VideoDto>, response: Response<VideoDto>) {
                         if (response.isSuccessful.not()) {
                             Log.d("MainActivity", "response fail")

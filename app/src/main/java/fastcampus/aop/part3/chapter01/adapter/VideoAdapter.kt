@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import fastcampus.aop.part3.chapter01.R
 import fastcampus.aop.part3.chapter01.model.VideoModel
 
-class VideoAdapter : ListAdapter<VideoModel, VideoAdapter.ViewHolder>(diffUtil) {
+class VideoAdapter(val callback: (String, String) -> Unit) : ListAdapter<VideoModel, VideoAdapter.ViewHolder>(diffUtil) {
 
     inner class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
@@ -28,6 +28,9 @@ class VideoAdapter : ListAdapter<VideoModel, VideoAdapter.ViewHolder>(diffUtil) 
                 .load(item.thumb)
                 .into(thumbnailImageView)
 
+            view.setOnClickListener {
+                callback(item.sources, item.title)
+            }
         }
 
     }
