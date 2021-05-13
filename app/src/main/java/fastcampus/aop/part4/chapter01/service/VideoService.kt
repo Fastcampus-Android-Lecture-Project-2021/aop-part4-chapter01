@@ -1,6 +1,6 @@
-package fastcampus.aop.part3.chapter01.service
+package fastcampus.aop.part4.chapter01.service
 
-import fastcampus.aop.part3.chapter01.dto.VideoDto
+import fastcampus.aop.part4.chapter01.dto.VideoDto
 import retrofit2.Call
 import retrofit2.http.GET
 

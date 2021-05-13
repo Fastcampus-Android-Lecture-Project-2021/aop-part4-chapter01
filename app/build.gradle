@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "fastcampus.aop.part3.chapter01"
+        applicationId "fastcampus.aop.part4.chapter01"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1

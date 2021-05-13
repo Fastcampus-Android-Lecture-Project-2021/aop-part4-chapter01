@@ -1,4 +1,4 @@
-package fastcampus.aop.part3.chapter01
+package fastcampus.aop.part4.chapter01
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

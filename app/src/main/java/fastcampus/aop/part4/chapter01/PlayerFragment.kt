@@ -1,8 +1,7 @@
-package fastcampus.aop.part3.chapter01
+package fastcampus.aop.part4.chapter01
 
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.fragment.app.Fragment
@@ -12,10 +11,10 @@ import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import fastcampus.aop.part3.chapter01.adapter.VideoAdapter
-import fastcampus.aop.part3.chapter01.databinding.FragmentPlayerBinding
-import fastcampus.aop.part3.chapter01.dto.VideoDto
-import fastcampus.aop.part3.chapter01.service.VideoService
+import fastcampus.aop.part4.chapter01.adapter.VideoAdapter
+import fastcampus.aop.part4.chapter01.databinding.FragmentPlayerBinding
+import fastcampus.aop.part4.chapter01.dto.VideoDto
+import fastcampus.aop.part4.chapter01.service.VideoService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -132,7 +131,6 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
                 .enqueue(object: Callback<VideoDto> {
                     override fun onResponse(call: Call<VideoDto>, response: Response<VideoDto>) {
                         if (response.isSuccessful.not()) {
-                            Log.d("MainActivity", "response fail")
                             return
                         }
                         response.body()?.let { videoDto ->

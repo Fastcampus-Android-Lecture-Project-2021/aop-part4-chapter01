@@ -1,4 +1,4 @@
-package fastcampus.aop.part3.chapter01.model
+package fastcampus.aop.part4.chapter01.model
 
 data class VideoModel(
     val title: String,

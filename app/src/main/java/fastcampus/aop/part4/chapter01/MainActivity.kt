@@ -1,13 +1,12 @@
-package fastcampus.aop.part3.chapter01
+package fastcampus.aop.part4.chapter01
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import fastcampus.aop.part3.chapter01.adapter.VideoAdapter
-import fastcampus.aop.part3.chapter01.dto.VideoDto
-import fastcampus.aop.part3.chapter01.service.VideoService
+import fastcampus.aop.part4.chapter01.adapter.VideoAdapter
+import fastcampus.aop.part4.chapter01.dto.VideoDto
+import fastcampus.aop.part4.chapter01.service.VideoService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -53,7 +52,6 @@ class MainActivity : AppCompatActivity() {
                 .enqueue(object : Callback<VideoDto> {
                     override fun onResponse(call: Call<VideoDto>, response: Response<VideoDto>) {
                         if (response.isSuccessful.not()) {
-                            Log.d("MainActivity", "response fail")
                             return
                         }
 

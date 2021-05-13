@@ -1,4 +1,4 @@
-package fastcampus.aop.part3.chapter01.adapter
+package fastcampus.aop.part4.chapter01.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import fastcampus.aop.part3.chapter01.R
-import fastcampus.aop.part3.chapter01.model.VideoModel
+import fastcampus.aop.part4.chapter01.R
+import fastcampus.aop.part4.chapter01.model.VideoModel
 
 class VideoAdapter(val callback: (String, String) -> Unit) : ListAdapter<VideoModel, VideoAdapter.ViewHolder>(diffUtil) {
 
